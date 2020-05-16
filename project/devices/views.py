@@ -1,4 +1,17 @@
-@app.route('/devices',methods=['GET','POST'])
+from flask import redirect,render_template,request,url_for,flash,Blueprint
+from project.devices.forms import DeviceForm,DeleteForm
+from project.models import Device
+from project import db
+
+
+devices_blueprint=Blueprint(
+	'devices',
+	__name__,
+	template_folder='templates'
+	)
+
+
+@devices_blueprint.route('/devices',methods=['GET','POST'])
 def index():
 	delete_form=DeleteForm()
 	if request.method=='POST':
@@ -11,12 +24,12 @@ def index():
 		else:
 			return render_template('devices/new.html',form=device_form)
 	return render_template('devices/index.html',devices=Device.query.all(),delete_form=delete_form)
-@app.route('/devices/new')
+@devices_blueprint.route('/devices/new')
 def new():
 	device_form=DeviceForm()
 	return render_template('devices/new.html',form=device_form)
 
-@app.route('/devices/<int:id>',methods=['POST','GET'])
+@devices_blueprint.route('/devices/<int:id>',methods=['POST','GET'])
 def edit(id):
 	delete_form=DeleteForm(request.form)
 	print(request.form)
