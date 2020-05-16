@@ -40,7 +40,7 @@ Small flask applications can be implemented in a simple way, but larger applicat
 
 
 &nbsp;&nbsp;&nbsp;- <b>Signzy$</b>python manage.py db upgrade<br>
-&nbsp;&nbsp;&nbsp;&nbsp; Creates the database file in <b>Signzy/project/<b>.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp; Creates the database file in <b>Signzy/project/</b>.<br><br>
   
 <b>--Signzy/project/models.py</b><br>
 can be understood as the schema for the tables in the database. Currently has two tables <b>Devices</b> and <b>Actions</b>, new tables can easily be added in this file. If a new column or table is added in the database.<br>
