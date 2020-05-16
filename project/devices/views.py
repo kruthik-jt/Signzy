@@ -3,14 +3,14 @@ from project.devices.forms import DeviceForm,DeleteForm
 from project.models import Device,Action
 from project import db
 
-
+#creating devices blueprint
 devices_blueprint=Blueprint(
 	'devices',
 	__name__,
 	template_folder='templates'
 	)
 
-
+#device page hosing the list of devices
 @devices_blueprint.route('/',methods=['GET','POST'])
 def index():
 	delete_form=DeleteForm()
@@ -24,11 +24,14 @@ def index():
 		else:
 			return render_template('new.html',form=device_form)
 	return render_template('devices/index.html',devices=Device.query.all(),delete_form=delete_form)
+
+#add new devices
 @devices_blueprint.route('/new')
 def new():
 	device_form=DeviceForm()
 	return render_template('devices/new.html',form=device_form)
 
+#delete installed devices
 @devices_blueprint.route('/<int:id>',methods=['POST','GET'])
 def edit(id):
 	delete_form=DeleteForm(request.form)

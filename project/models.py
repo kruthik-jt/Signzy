@@ -1,6 +1,6 @@
 from project import db
 
-
+#Device Table
 class Device(db.Model):
 	__tablename__='Device'
 	id=db.Column(db.Integer, primary_key=True)
@@ -11,7 +11,7 @@ class Device(db.Model):
 	def __init__(self,dev_name,dev_room):
 		self.dev_name=dev_name
 		self.dev_room=dev_room
-
+#Action Table
 class Action(db.Model):
 	__tablename__='Action'
 	id=db.Column(db.Integer,primary_key=True)
