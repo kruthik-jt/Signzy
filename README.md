@@ -64,4 +64,8 @@ Creates the database and other configurations like registering the blueprints of
 
 
 <b>Signzy/project/actions/</b> has the files <b>views.py</b> which has the APIs related to devices and <b>forms.py</b> has various form validation techniques for the forms pertaining to these APIs and csrf token retention techniques which makes the forms secure.<br>
+<<<<<<< HEAD
 <b>devices/templates/actions</b> has the html files for these APIs.<br>
+=======
+<b>devices/templates/actions</b> has the html files for these APIs.<br>
+>>>>>>> e58ea01da4004fe19c0644274d55918d89bce3c3
