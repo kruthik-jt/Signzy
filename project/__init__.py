@@ -1,7 +1,6 @@
-from flask import Flask,request,redirect,render_template,url_for
+from flask import Flask,redirect,url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_modus import Modus
-from forms import DeviceForm,LogForm,DeleteForm
 import datetime
 
 app=Flask(__name__)
@@ -11,8 +10,16 @@ app.config['SECRET_KEY']='SIGNZY'
 modus=Modus(app)
 db=SQLAlchemy(app)
 
+from project.devices.views import devices_blueprint
+from project.actions.views import actions_blueprint
+
 
 @app.route('/')
 def root():
-	return redirect(url_for('index'))
+	return redirect(url_for('devices.index'))
+
+app.register_blueprint(actions_blueprint,url_prefix='/actions')
+app.register_blueprint(devices_blueprint,url_prefix='/devices')
+
+
 

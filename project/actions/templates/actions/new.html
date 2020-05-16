@@ -2,7 +2,7 @@
 {% block content %}
 	<h1>ADD LOG</h1>
 	{{device.id}}
-	<form method="POST" action="{{url_for('action_index',dev_id=device.id)}}">
+	<form method="POST" action="{{url_for('actions.index',dev_id=device.id)}}">
 		<input type="text" name="status">
 		<button>ADD</button>
 	</form>

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 	<h1>ADD A NEW DEVICE</h1>
-	<form method="POST" action="{{url_for('index')}}">
+	<form method="POST" action="{{url_for('devices.index')}}">
 		{{ form.hidden_tag() }}
 		{% for field in form if field.widget.input_type!='hidden' %}
 			<p>
