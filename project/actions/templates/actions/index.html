@@ -1,11 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
-	<a href="{{url_for('actions.new',dev_id=device.id)}}">Add log</a>
-	<a href="{{url_for('devices.index')}}">HOME</a>
-	<h1>All logs for {{device.dev_name}}</h1>
-	{% for log in device.Action %}
-	<p> {{log.time_stamp}} {{log.dev_status}}</p>
-	{% endfor %}
+	<center><a href="{{url_for('devices.index')}}"><button>HOME</button></a></center><br>
+	<center><a href="{{url_for('actions.new',dev_id=device.id)}}"><button>Add log</button></a></center>
+	
+	<center><h1>All logs for {{device.dev_name}}</h1></center>
+	<center><table>
+		<tr>
+			<th>Timestamp</th>
+			<th>Status</th>
+		</tr>
+		
+		{% for log in device.Action %}
+		<tr>
+			<td>{{log.time_stamp}}</td>
+			<td>{{log.dev_status}}</td>
+		</tr>
+		{% endfor %}
+	</table></center>
 	
 {% endblock %}

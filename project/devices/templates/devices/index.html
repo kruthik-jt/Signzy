@@ -1,16 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<a href="{{url_for('devices.new')}}">Add a new device</a>
-	<h1>See all the devices</h1>
-	{% for device in devices %}
-	<p>{{device.dev_name}} {{device.dev_room}}</p><br>
-	<a href="{{url_for('actions.index',dev_id=device.id)}}">Communicate</a>
-	<form action="{{url_for('devices.edit',id=device.id)}}" method="POST">
-		{{delete_form.hidden_tag()}}
-		<input type="submit" value="X">
-		
-	</form>
+	<center><a href="{{url_for('devices.new')}}"><button>Add a new device</button></a></center>
+	<center><h1>See all the devices</h1></center>
+	<center>
+		<table>
+		<tr>
+    		<th>Device Name</th>
+    		<th>Device Room</th>
+    		<th>Perform Action</th>
+    		<th>Delete</th>
+  		</tr>
+		{% for device in devices %}
+		<tr>
+			<td>{{device.dev_name}}</td>
+			<td>{{device.dev_room}}</td>
+			<td><a href="{{url_for('actions.index',dev_id=device.id)}}"><button>Perform action</button></a></td>
+			<td><form action="{{url_for('devices.edit',id=device.id)}}" method="POST">
+				{{delete_form.hidden_tag()}}
+				<input type="submit" value="X"></form></td>
+		</tr>
+		{% endfor %}
+	
+	</table></center>
 
-	{% endfor %}
+	
 {% endblock %}
