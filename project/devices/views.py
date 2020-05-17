@@ -2,6 +2,7 @@ from flask import redirect,render_template,request,url_for,flash,Blueprint
 from project.devices.forms import DeviceForm,DeleteForm
 from project.models import Device,Action
 from project import db
+import json
 
 #creating devices blueprint
 devices_blueprint=Blueprint(

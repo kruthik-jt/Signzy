@@ -2,7 +2,7 @@
 {% block content %}
 
 	<center><a href="{{url_for('devices.index')}}"><button>HOME</button></a></center><br>
-	<center><a href="{{url_for('actions.new',dev_id=device.id)}}"><button>Add log</button></a></center>
+	
 	
 	<center><h1>All logs for {{device.dev_name}}</h1></center>
 	<center><table>
@@ -17,6 +17,7 @@
 			<td>{{log.dev_status}}</td>
 		</tr>
 		{% endfor %}
-	</table></center>
+	</table></center><br>
+	<center><a href="{{url_for('actions.new',dev_id=device.id)}}"><button>Add log</button></a></center>
 	
-{% endblock %}
+{% endblock %} 

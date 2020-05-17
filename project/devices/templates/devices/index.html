@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<center><a href="{{url_for('devices.new')}}"><button>Add a new device</button></a></center>
-	<center><h1>See all the devices</h1></center>
+	
+	<center><h1>LIST OF ALL DEVICES</h1></center>
 	<center>
 		<table>
 		<tr>
@@ -22,7 +22,8 @@
 		</tr>
 		{% endfor %}
 	
-	</table></center>
+	</table></center><br>
+	<center><a href="{{url_for('devices.new')}}"><button>Add a new device</button></a></center>
 
 	
-{% endblock %}
+{% endblock %} 

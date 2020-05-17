@@ -3,6 +3,7 @@ from project.actions.forms import LogForm,DeleteForm
 from project.models import Action,Device
 from project import db
 import datetime
+
 #Creating actions blueprint
 actions_blueprint=Blueprint(
 	'actions',
