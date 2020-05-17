@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-	<h1>ADD LOG</h1>
-	<p>Add new logs for {{device.id}}</p>
-	<form method="POST" action="{{url_for('actions.index',dev_id=device.id)}}">
+	<center><h1>ADD LOG</h1></center>
+	<center><p>Add new logs for {{device.dev_name}}</p></center>
+	<center><form method="POST" action="{{url_for('actions.index',dev_id=device.id)}}">
 		<input type="text" name="status">
 		<button>ADD</button>
-	</form>
+	</form></center>
 {% endblock %}
  
