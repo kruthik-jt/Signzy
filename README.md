@@ -35,7 +35,7 @@ Small flask applications can be implemented in a simple way, but larger applicat
 &nbsp;&nbsp;&nbsp;- <b>Signzy$</b>python manage.py db init<br>
 &nbsp;&nbsp;&nbsp;&nbsp; Creates the database.<br>
 
-&nbsp;&nbsp;&nbsp;- <b>Signzy$</b>python manage.py db migrate -m 'comments'<br>
+&nbsp;&nbsp;&nbsp;- <b>Signzy$</b>python manage.py db migrate -m "comments"<br>
 &nbsp;&nbsp;&nbsp;&nbsp; Creates the tables in the database based on the schema present in <b>Signzy/project/models.py</b>.<br>
 
 
